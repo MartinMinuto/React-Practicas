@@ -1,5 +1,5 @@
 import './App.css'
-import ItemDetailsContainer from './ItemDetails'
+import ItemDetailsContainer from './ItemDetails/ItemDetails'
 
 function App() {
 
