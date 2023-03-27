@@ -30,7 +30,7 @@ const ItemDetailsContainer = () => {
     <div>
       {rickAndMortyData.length > 0 ? (
         <div>
-          {rickAndMortyData.slice('',3).map((character) => (
+          {rickAndMortyData.slice('',1).map((character) => (
             <h1 key={character.id}>{character.name}</h1>
           ))}
         </div>
