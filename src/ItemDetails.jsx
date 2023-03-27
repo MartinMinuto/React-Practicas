@@ -1,34 +1,35 @@
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from "react"
 
 const ItemDetailsContainer = () => {
-    const [rickApi, setApiRick] = useState()
+    const [Api, SetApi] = useState()
 
-    const AsyncFuncion = async () => {
-        const response = await fetch('https://rickandmortyapi.com/api/character')
-        .then((response) => response.json())
+    const AsyncFunction = async () => {
+      const response = await fetch('https://rickandmortyapi.com/api/character')
+      .then((response) => response.json())
 
-        setApiRick(response)
+      SetApi(response)
     }
 
     useEffect(() => {
-        AsyncFuncion()
-    }, [])
+        AsyncFunction()
+    })
 
-    return (
+    return(
         <div>
-            { rickApi ? (
-                rickApi.results.map((rick) => (
-                    <div key={rick.id}>
-                       <h1>{rick.name}</h1>
-                    </div>
-                ))
+            {
+                Api ? (
+                    Api.results.map((ApiRick) => (
+                        <div key={ApiRick.id}>
+                           <h1>{ApiRick.name}</h1>
+                           <img src={`${ApiRick.image}`}/>
+                        </div>
+                    ))
                 ) : (
                     <h1>Loading...</h1>
                 )
             }
         </div>
     )
-}    
+}
 
 export default ItemDetailsContainer
