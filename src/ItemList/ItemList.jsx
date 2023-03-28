@@ -58,6 +58,8 @@ import './ItemList.css'
     const [getApi, setGetApi] = useState([])
     const [getImg, setGetImg] = useState()
 
+    const pokemonRamdom = Math.floor(Math.random() * 100) + 1;
+
     const fecthGetApi = async () => {
         const response = await fetch('https://rickandmortyapi.com/api/character')
         .then((response) => response.json())
@@ -66,7 +68,7 @@ import './ItemList.css'
     }
 
     const fecthGetImg = async () => {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon/charizard')
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonRamdom}`)
         .then((response) => response.json())
 
         setGetImg(response.sprites.front_default)
@@ -86,7 +88,7 @@ import './ItemList.css'
         <main className="Prueba">
            {getApi.length > 0 ? (
             <div>
-             {getApi.slice(' ', 1).map((character) => (
+             {getApi.slice(' ', 5).map((character) => (
                 <div key={character.id}>
                   <h1>{character.name}</h1>
                 </div>
@@ -97,7 +99,7 @@ import './ItemList.css'
              )
            }
            {
-            (getImg && <img src={getImg} alt='Pokemon Charizard'/>)
+            (getImg && <img src={getImg} alt='Pokemon'/>)
            }
 
         </main>
