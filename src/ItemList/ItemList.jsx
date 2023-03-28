@@ -58,7 +58,7 @@ import './ItemList.css'
     const [getApi, setGetApi] = useState([])
     const [getImg, setGetImg] = useState()
 
-    const pokemonRamdom = Math.floor(Math.random() * 100) + 1;
+    const pokemonRamdom = Math.floor(Math.random() * 1000) + 1;
 
     const fecthGetApi = async () => {
         const response = await fetch('https://rickandmortyapi.com/api/character')
@@ -88,7 +88,7 @@ import './ItemList.css'
         <main className="Prueba">
            {getApi.length > 0 ? (
             <div>
-             {getApi.slice(' ', 5).map((character) => (
+             {getApi.slice(' ', 1).map((character) => (
                 <div key={character.id}>
                   <h1>{character.name}</h1>
                 </div>
