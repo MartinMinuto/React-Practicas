@@ -3,11 +3,13 @@ import ItemDetailsContainer from './ItemDetails/ItemDetails'
 import ItemList from './ItemList/ItemList'
 
 import React, { useState, useEffect } from 'react';
+import ItemListConter from './ItemListConter';
 
 function DesktopView() {
   return (
     <div>
         <ItemDetailsContainer/>
+        <ItemListConter/>
     </div>
   );
 }
