@@ -1,6 +1,7 @@
 import './App.css'
 import React, { useState, useEffect } from 'react';
 import Mobile from './Mobile/Mobile';
+import Conted from './Conted/Conted'
 
 function DesktopView() {
   return (
@@ -13,6 +14,7 @@ function MobileView() {
   return (
     <div>
       <Mobile/>
+      <Conted/>
     </div>
   );
 }
