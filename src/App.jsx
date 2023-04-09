@@ -1,15 +1,10 @@
 import './App.css'
-import ItemDetailsContainer from './ItemDetails/ItemDetails'
-import ItemList from './ItemList/ItemList'
-
 import React, { useState, useEffect } from 'react';
-import ItemListConter from './ItemListConter';
+import Mobile from './Mobile/Mobile';
 
 function DesktopView() {
   return (
     <div>
-        <ItemDetailsContainer/>
-        <ItemListConter/>
     </div>
   );
 }
@@ -17,7 +12,7 @@ function DesktopView() {
 function MobileView() {
   return (
     <div>
-     <ItemList/>
+      <Mobile/>
     </div>
   );
 }
